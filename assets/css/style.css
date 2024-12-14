@@ -17,10 +17,19 @@
 html {
     scroll-behavior: smooth;
 }
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #1976D2;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #115599;
+}
 body {
+    position: relative;
     font-family: var(--font-primary);
     overflow-x: hidden;
-    /* height: 500vh; */
 }
 ul {
     list-style: none;
@@ -49,75 +58,88 @@ a {
     text-decoration: none;
     color: inherit;
 }
-/* .container {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: auto;
-    margin-right: auto;
-} */
 
-/* Small */
-/* @media (min-width: 768px) {
-    .container {
-        width: 750px;
-    }
-} */
-/* Medium */
-/* @media (min-width: 992px) {
-    .container {
-        width: 970px;
-    }
-} */
-/* Large */
-/* @media (min-width:1200px) {
-    .container {
-        width: 1170px;
-    }
-} */
+/*============ COMPONENTS ============*/
+.bg-color-primary {
+    background-color: var(--primary-color);
+}
 
-/* COMPONTS */
+.bg-color-second {
+    background-color: #F2F9FF;
+}
+
 .primary-color {
     color: var(--primary-color);
 }
-/*=============== HEADER ===============*/
-header {
-    background-color: #F2F9FF;
+
+.text-color {
+    color: #555;
 }
-header .nav-link.active {
+
+/*============ SPINNER ============*/
+.spinner-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--primary-color);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ;
+    opacity: 1;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner-overlay.remove {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*=============== HEADER ===============*/
+header .nav-link {
+    transition: 0.2s;
+}
+
+header .nav-link.active,
+header .nav-link:hover {
     color: var(--primary-color) !important;
 }
 
-/*=============== HOME ===============*/
-.home {
-    /* background-color: gray; */
+header button {
+    border-color: var(--primary-color) !important;
 }
 
+.dropdown-toggle::after {
+    display: none;
+}
+
+/*=============== HOME ===============*/
 .home li {
-    position: relative;
     border-color: var(--primary-color) !important;
     transition: 0.4s;
-    overflow: hidden;
 }
 
 .home li:hover {
     transform: translateY(-4px);
 }
 
-.home li a {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-
 .home .cv {
-    width: fit-content;
     font-size: 18px;
-    color: white;
     padding: 15px 45px;
-    background-color: var(--primary-color);
-    border-width: 0;
     box-shadow: 0px 8px 16px 0px var(--primary-color);
     transition: 0.3s;
 }
@@ -136,23 +158,7 @@ header .nav-link.active {
     animation-timing-function: ease-in-out;
 }
 
-@media (min-width: 768px){
-    .home h1 {
-        font-size: 50px;
-    }
-}
-
-@media (max-width: 576px){
-    .home img {
-        width: 350px;
-    }
-}
-
 /*=============== ABOUT ===============*/
-.about {
-    background-color: #F2F9FF;
-}
-
 .about img {
     width: 450px;
     animation-name: up-down;
@@ -162,92 +168,101 @@ header .nav-link.active {
     animation-timing-function: ease-in-out;
 }
 
-@media (min-width: 768px){
-    .about h1 {
-        font-size: 50px;
-    }
-}
-
 /*=============== SKILLS ===============*/
 .skill-main {
-    width: 100%;
     max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     .skill-wrrap {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    .skill-name {
-        color: #ffffff;
-        font-size: 18px;
-        font-weight: 500;
-    }
-
-    .skill-bar {
-        height: 20px;
-        background-color: #dde8f1;
-        border-radius: 8px;
-    }
-
-    .skill-name {
-        color: var(--primary-color);
-    }
-
-    .skill-per {
-        height: 20px;
-        background: var(--primary-color);
-        border-radius: 8px;
-        width: 0;
-        transition: 1s linear;
-        position: relative;
-        &:before {
-        content: attr(data-skill);
-        position: absolute;
-        padding: 4px 6px;
-        background-color: var(--primary-color);
-        color: #fff;
-        font-size: 11px;
-        border-radius: 4px;
-        top: -40px;
-        right: 0;
-        transform: translateX(50%);
+        .skill-name {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 500;
         }
 
-        &:after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background-color: var(--primary-color);
-        top: -20px;
-        right: 0;
-        transform: translateX(50%) rotate(45deg);
-        border-radius: 2px;
+        .skill-bar {
+            height: 20px;
+            background-color: #dde8f1;
+            border-radius: 8px;
         }
-    }
+
+        .skill-name {
+            color: var(--primary-color);
+        }
+
+        .skill-per {
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 8px;
+            width: 0;
+            transition: 1s linear;
+            position: relative;
+            &:before {
+            content: attr(data-skill);
+            position: absolute;
+            padding: 4px 6px;
+            background-color: var(--primary-color);
+            color: #fff;
+            font-size: 11px;
+            border-radius: 4px;
+            top: -40px;
+            right: 0;
+            transform: translateX(50%);
+            }
+
+            &:after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            top: -22px;
+            right: 0;
+            transform: translateX(50%) rotate(45deg);
+            border-radius: 2px;
+            }
+        }
     }
 }
 
-@media (min-width: 768px){
-    .skills h1 {
-        font-size: 50px;
-    }
+/*=============== LATEST PROJECT ===============*/
+.projects .card-project {
+    border-radius: 15px;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 7px 30px -15px var(--primary-color);
 }
 
+.projects .card-project.not-ready {
+    position: relative;
+}
+
+.projects .card-project.not-ready::before {
+    content: '';
+    position: absolute;
+    width: 102%;
+    height: 102%;
+    top: -2px;
+    left: -2px;
+    background-color: rgba(0, 0, 0, 0.712);
+}
+
+.projects .card-project.not-ready::after {
+    content: "Soon";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 50px;
+}
+
+.projects a {
+    font-size: 18px;
+    padding: 13px 25px;
+    border-radius: 10px;
+}
 
 /*=============== CONTACT ===============*/
-.contact {
-    background-color: #F2F9FF;
-}
-
 .contact .row > div:first-of-type img {
     width: 300px;
-}
-
-.contact .row > div:first-of-type h1 {
-    font-weight: 800;
 }
 
 .contact input.input{
@@ -266,14 +281,8 @@ header .nav-link.active {
 }
 
 .contact input[type="submit"] {
-    width: fit-content;
     font-size: 20px;
-    font-weight: 700;
-    color: white;
     padding: 10px 45px;
-    background-color: var(--primary-color);
-    border-width: 0;
-    /* box-shadow: 0px 4px 8px 0px var(--primary-color); */
     transition: 0.2s;
 }
 
@@ -282,15 +291,45 @@ header .nav-link.active {
     transition: 00.4;
 }
 
-
-/*=============== FOOTER ===============*/
-footer {
-    margin-top: 40px;
-    background-color: #F2F9FF;
+@media(max-width: 576px) {
+    .contact .row > div:first-of-type img {
+        width: 200px;
+    }
 }
 
+/*=============== ANIMATION ===============*/
 @keyframes up-down {
     100% {
         transform: translateY(-20px);
+    }
+}
+
+/*=============== SCROLL UP ===============*/
+.to-up {
+    right: 30px !important;
+    bottom: -300px;
+    transition: 0.6s;
+    padding: 15px 15px;
+    width: fit-content;
+}
+
+.to-up.show {
+    bottom: 30px;
+}
+
+/*=============== --- ===============*/
+@media (min-width: 768px){
+    .home h1,
+    .about h1,
+    .skills h1,
+    .projects h1{
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 576px){
+    .home img,
+    .about img {
+        width: 300px;
     }
 }
