@@ -29,16 +29,12 @@ const sr = ScrollReveal({
     origin: "top",
     distance: "60px",
     duration: 2500,
-    delay: 300,
+    delay: 100,
     // reset: true, // Animations repeata
 });
 
 
 sr.reveal(`.contact`)
-sr.reveal(`.home_left, .about_right`, {delay: 700, distance: "100px", origin: "left"});
-sr.reveal(`.home_right, .about_left`, {delay: 700, distance: "100px", origin: "right"});
-// sr.reveal(`.skill-wrrap`, {delay: 1400, distance: "100px", origin: "bottom", rotate: {z: -90}});
+sr.reveal(`.home_left, .about_right`, {delay: 400, distance: "100px", origin: "left"});
+sr.reveal(`.home_right, .about_left`, {delay: 400, distance: "100px", origin: "right"});
 sr.reveal(`.skill-wrrap, .card-project`, {delay: 1000, interval: 100});
-// sr.reveal(`.about__data, .recipe__list, .contact__data`, {origin: "right"});
-// sr.reveal(`.about__img, .recipe__img, .contact__image`, {origin: "left"});
-// sr.reveal(`.products__card`, {interval: 100});
