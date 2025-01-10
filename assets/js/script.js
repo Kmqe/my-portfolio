@@ -37,4 +37,4 @@ const sr = ScrollReveal({
 sr.reveal(`.contact`)
 sr.reveal(`.home_left, .about_right`, {delay: 400, distance: "100px", origin: "left"});
 sr.reveal(`.home_right, .about_left`, {delay: 400, distance: "100px", origin: "right"});
-sr.reveal(`.skill-wrrap, .card-project`, {delay: 1000, interval: 100});
+sr.reveal(`.skill, .card-project`, {delay: 500, interval: 100});
