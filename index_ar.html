@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +9,20 @@
     <!--============ Font Awesome Library ============-->
     <link rel="stylesheet" href="assets/css/all.min.css">
     <!--============ BootStrap ============-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
     <!--============ Main Template CSS File ============-->
     <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <!--============ Font Google ============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-primary:"Tajawal", serif;
+        }
+    </style>
 </head>
 <body>
     <!--============ overlay ============-->
@@ -24,7 +35,7 @@
         <div class="container py-3">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand text-uppercase fw-bold text-light" href="#">Mohamm<span class="d-inline-block text-info">ed</span>.</a>
+                    <a class="navbar-brand text-uppercase fw-bold text-light" href="#">.<span class="d-inline-block text-info">ed</span>Mohamm</a>
                     <button
                         class="navbar-toggler text fs-2 shadow-none text-light border-1 border-white "
                         type="button"
@@ -38,26 +49,26 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mt-4 mt-md-0 mb-2 mb-lg-0 align-items-center">
                             <li class="nav-item mx-2">
-                                <a class="nav-link active fw-bold fs-5 text-light" aria-current="page" href="#home">Home</a>
+                                <a class="nav-link active fw-bold fs-5 text-light" aria-current="page" href="#home">الرئيسية</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link fw-bold fs-5 text-light" href="#about">About</a>
+                                <a class="nav-link fw-bold fs-5 text-light" href="#about">من انا</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link fw-bold fs-5 text-light" href="#siklls">Skills</a>
+                                <a class="nav-link fw-bold fs-5 text-light" href="#siklls">مهاراتي</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link fw-bold fs-5 text-light" href="#projects">Projects</a>
+                                <a class="nav-link fw-bold fs-5 text-light" href="#projects">مشاريعي</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link fw-bold fs-5 text-light" href="#contact">Contact</a>
+                                <a class="nav-link fw-bold fs-5 text-light" href="#contact">تواصل معي</a>
                             </li>
                             <li class="nav-item dropdown mx-2 ">
                                 <a class="nav-link dropdown-toggle fw-bold fs-5 text-light d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa-solid fa-language fs-3"></i>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="./index_ar.html">العربية</a></li>
+                                    <li><a class="dropdown-item" href="./index.html">English</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -76,9 +87,9 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-6 home_left">
                         <div>
-                            <h2>Hello, it's me</h2>
-                            <h1 class="h1 fw-bold"><span class="d-inline-block primary-color">Mohammed</span> Alamry 👋</h1>
-                            <h2>And I'm a <span class="d-inline-block primary-color">Frontend Developer</span></h2>
+                            <h2>السلام عليكم</h2>
+                            <h1 class="h1 fw-bold"><span class="d-inline-block primary-color"> انا </span> محمد العمري 👋🏻</h1>
+                            <h2><span class="d-inline-block primary-color"> مطور </span> واجهات امامية </h2>
                             <p class="my-3 fs-5">
                             </p>
                         </div>
@@ -133,9 +144,10 @@
                         </div>
                         <div class="col-lg-6 about_right">
                             <div>
-                                <h1 class="text-light">About <span class="d-inline-block">Me</span></h1>
-                                <h2 class="text-light">Frontend Developer!</h2>
-                                <p class="fs-5 lh-lg text-light">I am a passionate Frontend Developer focused on crafting responsive, user-friendly, and visually stunning web interfaces. My goal is to deliver seamless and engaging digital experiences.
+                                <h1 class="text-light">من <span class="d-inline-block">انا</span></h1>
+                                <h2 class="text-light">مطوّر واجهات امامية</h2>
+                                <p class="fs-5 lh-lg text-light">
+                                    أنا مطوّر واجهات أمامية شغوف بتصميم وتطوير واجهات ويب متجاوبة، سهلة الاستخدام، وذات مظهر جذّاب. هدفي هو تقديم تجارب إلكترونية مميزة وممتعة للمستخدمين.
                                 </p>
                             </div>
                         </div>
@@ -145,7 +157,7 @@
 
         <!--============ SKILLS ============-->
         <section class="skills py-5 my-5" id="siklls">
-            <h1 class="text-center fs-sm-1">My <span class="d-inline-block primary-color ">Skills</span></h1>
+            <h1 class="text-center fs-sm-1 fw-bold">مهار<span class="d-inline-block primary-color ">تي</span></h1>
             <div class="container row py-5 g-5 justify-content-center ms-auto me-auto">
                 <div class="col-6 col-sm-4 col-md-2 col-lg-2 skill">
                     <img src="./assets/images/html.png" alt="HTML">
@@ -170,7 +182,7 @@
         
         <!--============ LATEST PROJECT ============-->
         <section class="projects bg-color-second py-5" id="projects">
-            <h1 class="text-center text-light fs-sm-1 mt-5 py-5 fw-bold">Latest <span class="d-inline-block">Project</span></h1>
+            <h1 class="text-center text-light text-shadow fs-sm-1 mt-5 py-5 fw-bold">اخر <span class="d-inline-block">المشاريع</span></h1>
             <div class="container py-5">
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-4">
@@ -178,12 +190,12 @@
                             <div class="card-project bg-light border p-3">
                                 <img src="assets/images/website1.png" alt="project image">
                                 <div class="card-text">
-                                    <h2 class="pt-4">Pizza Website</h2>
-                                    <p class="text-color">A responsive pizza website with HTML, CSS, and JavaScript for easy browsing and ordering</p>
+                                    <h2 class="pt-4 fw-bold">موقع بيتزا</h2>
+                                    <p class="text-color">موقع بيتزا مميزة هو منصة متجاوبة ومبتكرة لتسهيل طلب البيتزا عبر الإنترنت، مع تصميم عصري وتجربة مستخدم سلسة، ويتيح للعملاء تصفح قائمة الطعام بسهولة.</p>
                                     <a href="https://kmqe.github.io/Pizza-Website/"
                                         target="_blank"
                                         class="mt-5 d-inline-block text-light bg-color-primary border-0">
-                                        Live preview
+                                        معاينة مباشرة
                                     </a>
                                 </div>
                             </div>
@@ -192,12 +204,14 @@
 
                     <div class="col-md-6 col-lg-4">
                         <div>
-                            <div class="card-project overflow-hidden not-ready bg-light border p-3" data-content="Soon">
+                            <div class="card-project overflow-hidden not-ready bg-light border p-3" data-content="قريباً">
                                 <img src="assets/images/soon.jpg" alt="project image">
                                 <div class="card-text">
-                                    <h2 class="pt-4">title</h2>
-                                    <p class="text-color">description</p>
-                                    <a href="#" class="mt-5 d-inline-block text-light bg-color-primary border-0">Live preview</a>
+                                    <h2 class="pt-4 fw-bold">العنوان</h2>
+                                    <p class="text-color">الوصف</p>
+                                    <a href="#" class="mt-5 d-inline-block text-light bg-color-primary border-0">
+                                        معاينة مباشرة
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -205,12 +219,14 @@
 
                     <div class="col-md-6 col-lg-4">
                         <div>
-                            <div class="card-project overflow-hidden not-ready bg-light border p-3" data-content="Soon">
+                            <div class="card-project overflow-hidden not-ready bg-light border p-3" data-content="قريباً">
                                 <img src="assets/images/soon.jpg" alt="project image">
                                 <div class="card-text">
-                                    <h2 class="pt-4">title</h2>
-                                    <p class="text-color">description</p>
-                                    <a href="#" class="mt-5 d-inline-block text-light bg-color-primary border-0">Live preview</a>
+                                    <h2 class="pt-4 fw-bold">العنوان</h2>
+                                    <p class="text-color">الوصف</p>
+                                    <a href="#" class="mt-5 d-inline-block text-light bg-color-primary border-0">
+                                        معاينة مباشرة
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -223,12 +239,12 @@
         <!--============ CONTACT ME ============-->
         <section class="contact bg-text-light py-5" id="contact">
             <div class="container py-5">
-                <div class="row text-light align-items-center">
-                    <div class="col-md-6 p-5 d-flex justify-content-center justify-content-lg-end">
+                <div class="row text-light align-items-center flex-row-reverse">
+                    <div class="col-md-6 p-5 d-flex justify-content-center justify-content-lg-start">
                         <img class="" src="assets/images/email.svg" alt="image">
                     </div>
                     <div class="col-md-6 p-5 position-relative">
-                        <h1 class="text-dark text-center fw-bold">Contact Me</h1>
+                        <h1 class="text-dark text-center fw-bold">تواصل معي</h1>
                         <form   
                             action="https://api.web3forms.com/submit"
                             method="POST"
@@ -245,8 +261,8 @@
                                 <input 
                                     type="text"
                                     name="name"
-                                    class="input w-100 pe-3 py-3 rounded"
-                                    placeholder="Full Name"
+                                    class="input w-100 pe-3 py-3 rounded ps-5"
+                                    placeholder="الاسم كامل"
                                     required>
                             </div>
                             <div class="position-relative">
@@ -254,8 +270,8 @@
                                 <input
                                     type="email"
                                     name="email"
-                                    class="input w-100 pe-3 py-3 rounded mt-4"
-                                    placeholder="Your Email"
+                                    class="input w-100 py-3 rounded mt-4 ps-5 text-start"
+                                    placeholder="البريد الإكتروني"
                                     required>
                             </div>
                             <div class="position-relative">
@@ -263,20 +279,20 @@
                                 <input
                                     type="text"
                                     name="subject"
-                                    class="input w-100 pe-3 py-3 rounded mt-4"
-                                    placeholder="Subject"
+                                    class="input w-100 pe-3 py-3 rounded mt-4 ps-5"
+                                    placeholder="الموضوع"
                                     required>
                             </div>
                             <textarea 
                                 name="message"
                                 class="input w-100 ps-3 pe-3 py-3 rounded mt-4 border-0 outline-0 lh-lg"
-                                placeholder="Message"
+                                placeholder="الرسالة"
                                 required>
                             </textarea>
                             <input
                                 type="submit"
                                 name="submit"
-                                value="Send"
+                                value="إرسال"
                                 class="mt-3 rounded mx-auto fw-bold text-light bg-color-primary border-0">
                         </form>
                     </div>
@@ -289,7 +305,7 @@
     <!--============ FOOTER ============-->
     <footer class="bg-color-primary">
         <div class="container d-flex justify-content-center">
-            <h5 class="py-4 m-0 text-light">Created By <span class="d-inline-block text-decoration-underline">Mohammed Alamry</span></h5>
+            <h5 class="py-4 m-0 text-light"> تم الإنشاء بواسطة <span class="d-inline-block">محمد العمري</span></h5>
         </div>
     </footer>
 
