@@ -207,6 +207,10 @@ header button {
     font-size: 18px;
     padding: 13px 25px;
     border-radius: 10px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    left: initial !important;
 }
 
 /*=============== CONTACT ===============*/

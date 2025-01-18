@@ -177,6 +177,13 @@ header button {
     border-radius: 15px;
     border-color: var(--primary-color) !important;
     box-shadow: 0 7px 30px -15px var(--primary-color);
+    height: 550px;
+    position: relative;
+}
+
+.projects .card-project img  {
+    width: 392px !important;
+    height: 290px !important;
 }
 
 .projects .card-project.not-ready {
@@ -207,6 +214,13 @@ header button {
     font-size: 18px;
     padding: 13px 25px;
     border-radius: 10px;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.projects .card-text {
+    width: 100%;
 }
 
 /*=============== CONTACT ===============*/
